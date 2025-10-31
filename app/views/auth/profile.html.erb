@@ -1,0 +1,29 @@
+<div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+  <h1>🎉 Welcome to Kinde Test App!</h1>
+  
+  <div style="background: #f0f9ff; border: 2px solid #0284c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h2>👤 User Profile</h2>
+    <p><strong>Email:</strong> <%= @user[:email] %></p>
+    <p><strong>ID:</strong> <%= @user[:id] %></p>
+  </div>
+  
+  <div style="background: <%= @persistent ? '#f0fdf4' : '#fef2f2' %>; border: 2px solid <%= @persistent ? '#22c55e' : '#ef4444' %>; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h2>🔒 Session Persistence Status (PR #66 Feature)</h2>
+    <% if @persistent %>
+      <p style="color: #15803d; font-size: 18px;">
+        ✅ <strong>Persistent Session</strong> - You'll stay logged in for 29 days
+      </p>
+      <p style="color: #666;">This is the "Remember Me" functionality from PR #66!</p>
+    <% else %>
+      <p style="color: #dc2626; font-size: 18px;">
+        ⚠️ <strong>Session-Only</strong> - You'll be logged out when browser closes
+      </p>
+      <p style="color: #666;">This is the secure session-only mode from PR #66!</p>
+    <% end %>
+  </div>
+  
+  <div style="margin: 30px 0;">
+    <%= link_to 'Logout', logout_path, style: 'background: #ef4444; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;' %>
+  </div>
+</div>
+
