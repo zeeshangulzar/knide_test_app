@@ -23,5 +23,8 @@ module KindeTestApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Add Kinde SDK middleware for automatic session management
+    config.middleware.use KindeSdk::Middleware
   end
 end
